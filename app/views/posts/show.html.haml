@@ -1,7 +1,26 @@
+
 #post
+
+  #nav
+    = link_to 'back', posts_path
+
   %h1= post.title
 
   .body= post.content
 
-  #nav
-    = link_to 'back', posts_path
+  #comments
+    %h3= pluralize(post.comments.count, 'comment')
+
+    = render comments
+
+    .add-comment
+      = form_for([post, post.comments.build]) do |cf|
+        .field
+          = cf.label :commenter
+          = cf.text_field :commenter
+
+        .field
+          = cf.label :body
+          = cf.text_area :body
+        .actions
+          = cf.submit
