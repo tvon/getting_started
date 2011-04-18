@@ -3,7 +3,7 @@ Feature: User Authentication
   [stakeholer]
   wants [behaviour]
 
-  Scenario: Register new user, failing
+  Scenario: Attempting to register with mismatching passwords
     Given I am on the registration page
     When I fill in "Email" with "foo@bar.com"
     And I fill in "Password" with "password1"

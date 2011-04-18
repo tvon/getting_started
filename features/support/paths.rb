@@ -8,6 +8,8 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /login/
+      new_user_session_path
     when /the registration page/
       new_user_registration_path
     when /the home\s?page/
