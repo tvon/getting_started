@@ -1,0 +1,13 @@
+= form_for asset, :html => { :multipart => true } do |f|
+  .field 
+    = f.label :name
+    = f.text_field :name
+
+  .field 
+    = f.label :attachment
+    = f.file_field :attachment
+
+  .actions
+    = f.submit
+
+
