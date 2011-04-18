@@ -5,6 +5,7 @@ gem 'devise'
 gem 'cancan'
 gem 'decent_exposure'
 gem 'role_model'
+gem 'carrierwave'
 
 gem 'pg'
 
