@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
   expose(:posts) { Post.order(:created_at) }
-  expost(:post)
-
+  expose(:post)
 end
