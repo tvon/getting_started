@@ -23,7 +23,7 @@ group :development, :test, :staging do
 end
 
 group :development, :test do
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'capybara'
   gem 'rspec-rails'
   gem 'akephalos'
   gem 'cucumber-rails'
