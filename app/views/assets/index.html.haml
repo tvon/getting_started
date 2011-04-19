@@ -4,7 +4,11 @@
   - assets.each do |asset|
     .asset
       = image_tag asset.attachment_url(:thumb).to_s
-      .link= link_to asset.name, asset
+      .link= link_to(asset.name, asset)
+      - if user_signed_in?
+        .actions
+          = link_to('Destroy', asset, :method => :delete)
 
-  .actions
-    = link_to 'Add Asset', new_asset_path
+  - if user_signed_in?
+    .actions
+      = link_to 'Add Asset', new_asset_path

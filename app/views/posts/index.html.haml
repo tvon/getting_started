@@ -11,5 +11,6 @@
       .body
         = post.body
 
-      .actions
-        = link_to('Destroy', post, :method=>:delete) 
+      - if user_signed_in?
+        .actions
+          = link_to('Destroy', post, :method=>:delete) 

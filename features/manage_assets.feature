@@ -3,6 +3,15 @@ Feature: Manage assets
   the client
   wants a way to upload resources to the site
   
+  Scenario: Anon cannot create assets
+    Given I am on the assets page
+    Then I should not see "Add Asset"
+
+  Scenario: Users see create links
+    Given I am an authenticated user
+    Given I am on the assets page
+    Then I should see "Add Asset"
+
   Scenario: Create new asset
     Given I am an authenticated user
     Given I am on the new asset page
