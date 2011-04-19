@@ -3,6 +3,11 @@
   line-height: 1.2em;
 }
 
+#content {
+  width: 960px;
+  margin: 1em auto 1em auto;
+}
+
 .asset {
   border: 1px #999 solid;
   background: #f0f0f0;

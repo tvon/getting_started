@@ -8,9 +8,12 @@
 
   %body
 
-    - if notice
-      %p.notice= notice
-    - if alert
-      %p.alert= alert
+    #content
 
-    = yield
+      - if notice
+        %p.notice= notice
+
+      - if alert
+        %p.alert= alert
+
+      = yield
