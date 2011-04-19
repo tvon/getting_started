@@ -1,3 +1,4 @@
 $('#comments').append("<%= escape_javascript(render comment) %>");
-$('.comment').last().highlight();
-$('#comment_body').clear();
+$('#comment_body').val('');
+$('.comment').last().addClass('new');
+$('html,body').animate({scrollTop: $('.comment').last().offset().top});

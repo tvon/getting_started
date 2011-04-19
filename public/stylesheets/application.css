@@ -46,3 +46,8 @@ a:hover {
 #comments .comment.odd {
   background: #eee;
 }
+
+#comments .comment.new {
+  background-color: #fefdc3;
+}
+
