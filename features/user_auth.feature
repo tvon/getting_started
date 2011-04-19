@@ -18,3 +18,10 @@ Feature: User Authentication
     And I fill in "Password confirmation" with "password1"
     And I press "Sign up"
     Then I should see "You have signed up successfully"
+
+  Scenario: Edit user information
+    Given I am an authenticated user
+    Given I am on the profile page
+    When I fill in "First Name" with "John"
+    And I fill in "Last Name" with "Doe"
+    And I press "Save"

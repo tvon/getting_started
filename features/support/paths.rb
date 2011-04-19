@@ -20,6 +20,8 @@ module NavigationHelpers
       new_asset_path
     when /the asset #(.*) page/
       asset_path($1)
+    when /the profile page/
+      edit_user_registration
 
 
     # Add more mappings here.
