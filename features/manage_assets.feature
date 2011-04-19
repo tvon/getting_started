@@ -3,23 +3,23 @@ Feature: Manage assets
   the client
   wants a way to upload resources to the site
   
-  Scenario: Anon cannot create assets
+  Scenario: Anonymous users cannot create assets
     Given I am on the assets page
     Then I should not see "Add Asset"
 
-  Scenario: Users see create links
+  Scenario: Authenticated user can see create links
     Given I am an authenticated user
     Given I am on the assets page
     Then I should see "Add Asset"
 
-  Scenario: Create new asset
+  Scenario: Authenticated user can create new asset
     Given I am an authenticated user
     Given I am on the new asset page
     When I fill in "Name" with "name 1"
     And I press "Create"
     Then I should see "name 1"
 
-  Scenario: Comment on asset
+  Scenario: Authenticated user can comment on asset
     Given I am an authenticated user
     Given the following assets:
       |name|
@@ -28,6 +28,6 @@ Feature: Manage assets
     Given I am on the assets page
     When I follow "asset 1"
     Then I should see "asset 1"
-    When I fill in "Comment" with "comment 1"
-    And I press "Submit"
+    When I fill in "comment_body" with "comment 1"
+    And I press "Contribute Comment"
     Then I should see "comment 1"

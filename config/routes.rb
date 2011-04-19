@@ -3,7 +3,11 @@ GettingStarted::Application.routes.draw do
   devise_for :users
 
   resources :posts
-  resources :assets
+
+  resources :assets do
+    resources :comments
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

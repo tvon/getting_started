@@ -1,3 +1,23 @@
 #asset
   %h3= asset.name
   = image_tag asset.attachment_url(:thumb).to_s
+
+  #comments
+
+    - if user_signed_in?
+
+      - form_for([asset, asset.comments.build]) do |cf|
+        .field
+          = cf.label 'Comment:'
+          = cf.text_area :body
+        .actions
+          = cf.submit 'Contribute Comment'
+    - else
+      %p= "You must #{link_to('Sign In', new_user_session_path)} to comment.".html_safe
+
+    - asset.comments.each do |c|
+      .comment
+        .author= c.user
+        .body= c.body
+
+    
