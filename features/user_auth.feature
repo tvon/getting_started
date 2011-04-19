@@ -21,8 +21,8 @@ Feature: User Authentication
 
   Scenario: Edit user information
     Given I am an authenticated user
-    Given I am on the profile page
-    When I fill in "First Name" with "John"
-    And I fill in "Last Name" with "Doe"
+    Given I am on the edit user registration page
+    When I fill in "First name" with "John"
+    And I fill in "Last name" with "Doe"
     And I fill in "Current password" with "password"
-    And I press "Save"
+    And I press "Update"
