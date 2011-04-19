@@ -1,6 +1,10 @@
 %h1 Assets
 
-- assets.each do |asset|
-  .asset
-    = image_tag asset.attachment_url(:thumb).to_s
-    .link= link_to asset.name, asset
+#assets
+  - assets.each do |asset|
+    .asset
+      = image_tag asset.attachment_url(:thumb).to_s
+      .link= link_to asset.name, asset
+
+  .actions
+    = link_to 'Add Asset', new_asset_path
