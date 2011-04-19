@@ -10,8 +10,4 @@
     - else
       %p= "You must #{link_to('Sign In', new_user_session_path)} to comment.".html_safe
 
-    - asset.comments.each do |c|
-      .comment{ :class => cycle('odd', 'even')}
-        .body= c.body
-
-    
+    = render asset.comments

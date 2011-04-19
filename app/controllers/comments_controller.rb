@@ -1,8 +1,16 @@
 class CommentsController < ApplicationController
 
+  before_filter :authenticate_user!, :except => [ :show, :index]
+
+  respond_to :html, :js, :json
+
   expose(:asset)
   expose(:comments) { Comment.order(:created_at) }
   expose(:comment)
+
+  def show
+    respond_with comment
+  end
 
   def new
   end
@@ -11,7 +19,8 @@ class CommentsController < ApplicationController
     comment.user = current_user
     comment.asset = asset # Shouldn't this be automgic?
     if comment.save
-      redirect_to comment.asset, :notice => 'Commented added, thanks for your input.'
+      respond_with comment.asset
+      #redirect_to comment.asset, :notice => 'Commented added, thanks for your input.'
     else
       render :new
     end

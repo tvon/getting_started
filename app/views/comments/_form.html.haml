@@ -1,4 +1,4 @@
-- form_for([asset, asset.comments.build]) do |cf|
+- form_for([asset, asset.comments.build], :remote=>true) do |cf|
   .field
     = cf.label 'Comment:'
     = cf.text_area :body
