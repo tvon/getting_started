@@ -24,4 +24,5 @@ Feature: User Authentication
     Given I am on the profile page
     When I fill in "First Name" with "John"
     And I fill in "Last Name" with "Doe"
+    And I fill in "Current password" with "password"
     And I press "Save"

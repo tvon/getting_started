@@ -7,8 +7,8 @@ Given /^I have one\s+user "([^\"]*)" with password "([^\"]*)"$/ do |email, passw
 end
 
 Given /^I am an authenticated user$/ do
-  email = 'foo@example.com'
-  password = 'orange'
+  email = 'user@example.com'
+  password = 'password'
 
   Given %{I have one user "#{email}" with password "#{password}"}
   And %{I go to login}
