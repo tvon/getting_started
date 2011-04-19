@@ -1,7 +1,7 @@
 Feature: Site Navigation
   In order to find your way around the site
   the user
-  wants to be able to click, click click... (how to phrase?)
+  wants to be able to navigate easily from the hoem page
 
   Scenario: Login, Logout and view Profile
     Given I am on the home page
