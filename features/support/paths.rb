@@ -18,6 +18,8 @@ module NavigationHelpers
       new_post_path
     when /the new asset page/
       new_asset_path
+    when /the asset #(.*) page/
+      asset_path($1)
 
 
     # Add more mappings here.
