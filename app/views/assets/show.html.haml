@@ -11,8 +11,7 @@
       %p= "You must #{link_to('Sign In', new_user_session_path)} to comment.".html_safe
 
     - asset.comments.each do |c|
-      .comment
-        .author= c.user.to_s
+      .comment{ :class => cycle('odd', 'even')}
         .body= c.body
 
     
