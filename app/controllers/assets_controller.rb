@@ -1,5 +1,7 @@
 class AssetsController < ApplicationController
 
+  before_filter :authenticate_user!, :except => [ :show, :index]
+
   expose(:assets) { Asset.order(:created_at) }
   expose(:asset)
 
