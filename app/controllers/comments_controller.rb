@@ -8,6 +8,8 @@ class CommentsController < ApplicationController
   end
 
   def create
+    comment.user = current_user
+    comment.asset = asset # Shouldn't this be automgic?
     if comment.save
       redirect_to comment.asset, :notice => 'Commented added, thanks for your input.'
     else

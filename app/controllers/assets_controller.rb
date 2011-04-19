@@ -4,6 +4,7 @@ class AssetsController < ApplicationController
 
   expose(:assets) { Asset.order(:created_at) }
   expose(:asset)
+  expose(:comments) { asset.comments }
 
   def show; end
 
