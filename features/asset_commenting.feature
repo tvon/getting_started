@@ -21,7 +21,9 @@ Feature: Commenting
     Given the following assets:
       |name|
       |asset 1|
-    Given I am on the asset #1 page
+    Given I am on the assets page
+    When I follow "asset 1"
+    Then I should see "asset 1"
     When I fill in "comment_body" with "test comment 1"
     And I press "Contribute Comment"
-    Then I should see "test comment 1"
+    Then I should see "test comment 1" within ".comment.new"
