@@ -9,4 +9,6 @@ class Asset
   mount_uploader :attachment, AttachmentUploader
 
   has_many :comments
+
+  embeds_many :votes
 end

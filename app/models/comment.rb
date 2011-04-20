@@ -5,6 +5,7 @@ class Comment
 
   belongs_to :asset
   belongs_to :user 
+  embeds_many :votes
 
   def to_slug
     # XXX: Not great given the possability for duplication.. should use username+unix timestamp

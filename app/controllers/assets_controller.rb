@@ -8,6 +8,8 @@ class AssetsController < ApplicationController
   expose(:asset)
   expose(:comments) { asset.comments }
   expose(:comment) { Comment.new }
+  expose(:votes) { asset.votes }
+  expose(:vote) { Vote.new }
 
   def index
     respond_with assets
