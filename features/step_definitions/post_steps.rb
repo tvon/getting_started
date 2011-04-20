@@ -1,5 +1,7 @@
 Given /^the following posts:$/ do |posts|
-  Post.create!(posts.hashes)
+  posts.hashes.each do |p|
+    Post.create!(p)
+  end
 end
 
 When /^I delete the (\d+)(?:st|nd|rd|th) post$/ do |pos|

@@ -1,5 +1,7 @@
 Given /^the following assets:$/ do |assets|
-  Asset.create!(assets.hashes)
+  assets.hashes.each do |a|
+    Asset.create!(a)
+  end
 end
 
 When /^I delete the (\d+)(?:st|nd|rd|th) asset$/ do |pos|
