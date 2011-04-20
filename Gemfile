@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'heroku'
+
 gem 'rails', '3.0.6'
 gem 'devise'
 gem 'cancan'
