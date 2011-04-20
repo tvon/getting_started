@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   respond_to :html, :js
 
   expose(:asset)
-  expose(:comments) { Comment.order_by(:created_at) }
+  expose(:comments) { asset.comments.desc(:created_at) }
   expose(:comment)
 
   def show
