@@ -1,8 +1,8 @@
 #asset
   %h3= asset.name
   #voting
-    #upvote= "+#{asset.upvotes}"
-    #downvote= "-#{asset.downvotes}"
+    #upvote= link_to("+#{asset.upvotes}", upvote_asset_path)
+    #downvote= link_to("-#{asset.downvotes}", downvote_asset_path)
   = image_tag asset.attachment_url.to_s
 
   #comments
