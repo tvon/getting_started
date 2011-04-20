@@ -15,7 +15,11 @@ class User
   has_many :comments
 
   def name
-    "#{first_name} #{last_name}".strip
+    if first_name && last_name
+      return "#{first_name} #{last_name}".strip
+    else
+      return email
+    end
   end
 
 end
