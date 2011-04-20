@@ -13,10 +13,10 @@ class Asset
   embeds_many :votes
 
   def upvotes
-    votes.find(:kind => Vote::UPVOTE)
+    votes.where(:kind => Vote::UPVOTE).length
   end
 
   def downvotes
-    votes.find(:kind => Vote::DOWNVOTE)
+    votes.where(:kind => Vote::DOWNVOTE).length
   end
 end
