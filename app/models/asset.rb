@@ -4,7 +4,7 @@ class Asset
   field :name
   field :attachment
 
-  mount_uploader :attachment, AttachmentUploader
+  #mount_uploader :attachment, AttachmentUploader
 
   has_many :comments
 end
