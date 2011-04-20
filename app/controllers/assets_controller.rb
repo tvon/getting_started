@@ -2,7 +2,7 @@ class AssetsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [ :show, :index]
 
-  respond_to :html, :js
+  respond_to :html, :json, :js
 
   expose(:assets) { Asset.desc(:created_at) }
   expose(:asset)
@@ -48,7 +48,7 @@ class AssetsController < ApplicationController
     asset.votes << Vote.new(:kind => Vote::UPVOTE)
     respond_to do |format|
       format.html { redirect_to asset }
-      format.js 
+      format.json { render :template => 'assets/votes' }
     end
   end
 
@@ -56,7 +56,7 @@ class AssetsController < ApplicationController
     asset.votes << Vote.new(:kind => Vote::DOWNVOTE)
     respond_to do |format|
       format.html { redirect_to asset }
-      format.js 
+      format.json { render :template => 'assets/votes' }
     end
   end
 
