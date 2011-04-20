@@ -11,4 +11,12 @@ class Asset
   has_many :comments
 
   embeds_many :votes
+
+  def upvotes
+    votes.find(:kind => Vote::UPVOTE)
+  end
+
+  def downvotes
+    votes.find(:kind => Vote::DOWNVOTE)
+  end
 end
