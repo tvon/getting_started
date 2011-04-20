@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [ :show, :index]
   
-  expose(:posts) { Post.order_by(:created_at) }
+  expose(:posts) { Post.desc(:created_at) }
   expose(:post)
 
   def new
