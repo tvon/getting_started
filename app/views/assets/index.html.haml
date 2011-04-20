@@ -3,6 +3,10 @@
 #assets
   - assets.each do |asset|
     .asset
+      .votes
+        .upvotes= asset.upvotes
+        .upvotes= asset.downvotes
+
       = image_tag asset.attachment_url(:thumb).to_s
       .link= link_to(asset.name, asset)
       - if user_signed_in?
