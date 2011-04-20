@@ -1,5 +1,8 @@
 #asset
   %h3= asset.name
+  #voting
+    #upvote= "+#{asset.upvotes}"
+    #downvote= "-#{asset.downvotes}"
   = image_tag asset.attachment_url.to_s
 
   #comments
