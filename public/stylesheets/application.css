@@ -51,3 +51,11 @@ a:hover {
   background-color: #fefdc3;
 }
 
+#assets .asset .actions {
+  text-align: center;
+  font-size: smaller;
+}
+
+#assets .actions {
+  clear: both;
+

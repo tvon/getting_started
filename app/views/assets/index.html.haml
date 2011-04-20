@@ -7,7 +7,7 @@
       .link= link_to(asset.name, asset)
       - if user_signed_in?
         .actions
-          = link_to('Destroy', asset, :method => :delete)
+          = link_to('Destroy', asset, :method => :delete, :confirm => "Yeah?")
 
   - if user_signed_in?
     .actions
