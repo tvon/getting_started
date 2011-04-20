@@ -1,8 +1,6 @@
 class Comment
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :user_id, :type => Integer
-  field :asset_id, :type => Integer
   field :body
 
   belongs_to :asset
