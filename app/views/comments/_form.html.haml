@@ -1,6 +1,6 @@
 = form_for([asset, asset.comments.build], :remote=>true) do |cf|
   .field
     = cf.label 'Comment:'
-    = cf.text_area :body
+    = cf.text_area :body, :size => "60x4"
   .actions
     = cf.submit 'Contribute Comment'
