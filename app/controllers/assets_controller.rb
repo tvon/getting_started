@@ -48,7 +48,7 @@ class AssetsController < ApplicationController
     asset.votes << Vote.new(:kind => Vote::UPVOTE)
     respond_to do |format|
       format.html { redirect_to asset }
-      format.json { render :template => 'assets/votes' }
+      format.json { render :json => { :upvotes => asset.upvotes } }
     end
   end
 
@@ -56,7 +56,7 @@ class AssetsController < ApplicationController
     asset.votes << Vote.new(:kind => Vote::DOWNVOTE)
     respond_to do |format|
       format.html { redirect_to asset }
-      format.json { render :template => 'assets/votes' }
+      format.json { render :json => { :downvotes => asset.downvotes } }
     end
   end
 

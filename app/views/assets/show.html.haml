@@ -1,3 +1,29 @@
+:javascript
+
+  $(function(){
+
+    $('#upvote a').click(function(){
+      $.ajax({
+        url: '#{upvote_asset_path}', 
+        dataType: 'json',
+        success: function(data){
+          $('#upvote a').html("+" + data['upvotes']);
+          }
+        });
+      return false;
+    });
+
+    $('#downvote a').click(function(){
+      $.ajax({
+        url: '#{downvote_asset_path}',
+        success: function(data){
+          $('#downvote a').html("-" + data['downvotes']);
+        }
+      });
+      return false;
+    });
+  });
+
 #asset
   %h3= asset.name
   #voting
