@@ -46,12 +46,18 @@ class AssetsController < ApplicationController
 
   def upvote
     asset.votes << Vote.new(:kind => Vote::UPVOTE)
-    render :show
+    respond_to do |format|
+      format.html { redirect_to asset }
+      format.js 
+    end
   end
 
   def downvote
     asset.votes << Vote.new(:kind => Vote::DOWNVOTE)
-    render :show
+    respond_to do |format|
+      format.html { redirect_to asset }
+      format.js 
+    end
   end
 
 end
