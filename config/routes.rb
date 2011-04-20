@@ -5,10 +5,14 @@ GettingStarted::Application.routes.draw do
   resources :posts
 
   resources :assets do
-    resources :comments do 
-      resource :votes
+    resources :comments do
+        get 'upvote'
+        get 'downvote'
     end
-    resource :votes
+    member do
+      get 'upvote'
+      get 'downvote'
+    end
   end
 
   # The priority is based upon order of creation:
