@@ -2,11 +2,12 @@ class AssetsController < ApplicationController
 
   before_filter :authenticate_user!, :except => [ :show, :index]
 
-  respond_to :html, :js, :json
+  respond_to :html, :js
 
-  expose(:assets) { Asset.order_by(:created_at) }
+  expose(:assets) { Asset.desc(:created_at) }
   expose(:asset)
   expose(:comments) { asset.comments }
+  expose(:comment) { Comment.new }
 
   def index
     respond_with assets
