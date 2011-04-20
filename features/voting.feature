@@ -10,14 +10,21 @@ Feature: Voting
       |asset beta|
     Given I am on the assets page
     When I follow "asset alpha"
-    Then I should see "asset alpha"
+    Then I should see "+0" within "#upvote"
+    Then I should see "-0" within "#downvote"
+    When I follow "+"
+    Then I should see "+1" within "#upvote"
 
   @javascript
-  Scenario: Commenting via Ajax
+  Scenario: Voting via Ajax
     Given I am an authenticated user
     Given the following assets:
       |name|
       |asset alpha|
+      |asset beta|
     Given I am on the assets page
     When I follow "asset alpha"
-    Then I should see "asset alpha"
+    Then I should see "+0" within "#upvote"
+    Then I should see "-0" within "#downvote"
+    When I follow "+"
+    Then I should see "+1" within "#upvote"
