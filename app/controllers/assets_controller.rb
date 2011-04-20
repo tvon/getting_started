@@ -8,8 +8,6 @@ class AssetsController < ApplicationController
   expose(:asset)
   expose(:comments) { asset.comments }
   expose(:comment) { Comment.new }
-  expose(:votes) { asset.votes }
-  expose(:vote) { Vote.new }
 
   def index
     respond_with assets
@@ -44,6 +42,16 @@ class AssetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def upvote
+    asset.votes << Vote.new(:kind => Vote::UPVOTE)
+    render :show
+  end
+
+  def downvote
+    asset.votes << Vote.new(:kind => Vote::DOWNVOTE)
+    render :show
   end
 
 end
