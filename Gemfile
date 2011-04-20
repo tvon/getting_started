@@ -9,6 +9,8 @@ gem 'carrierwave'
 gem 'rmagick'
 
 gem 'pg'
+gem 'mongoid'
+gem 'bson_ext'
 
 gem 'passenger'
 
