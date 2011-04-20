@@ -4,7 +4,7 @@ class AssetsController < ApplicationController
 
   respond_to :html, :js, :json
 
-  expose(:assets) { Asset.order(:created_at) }
+  expose(:assets) { Asset.order_by(:created_at) }
   expose(:asset)
   expose(:comments) { asset.comments }
 
